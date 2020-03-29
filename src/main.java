@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class main {
@@ -15,7 +16,7 @@ public class main {
     public static void main (String args[]){
 
         Scanner sc=new Scanner(System.in);
-        System.out.print("Enter Monthly Salary ( MMK ) : ");
+        System.out.print("\u001B[32mEnter Monthly Salary ( MMK ) : ");
         monthlySalary=sc.nextDouble();
         annualSalary=12*monthlySalary;
         System.out.print("Enter Number of Months : ");
@@ -74,6 +75,7 @@ public class main {
                 System.out.print("How Many Children Do You Have ? ");
                 int nunOfChildren=sc.nextInt();
                 childrenRelief=nunOfChildren*500000;
+                sc.nextLine();
                 break;
             }
             else if(quesChildren.equals("No")){
@@ -122,19 +124,19 @@ public class main {
         }
 
         monthlyTax=totalTax/12;
-
-        System.out.println("RESULT");
-        System.out.println("Monthly Salary                   "+monthlySalary);
-        System.out.println("Annual Salary                    "+annualSalary);
-        System.out.println("Income for "+months+" months              "+months*monthlySalary);
-        System.out.println("Personal Relief                  "+personalRelief);
-        System.out.println("Parent Relief                    "+parentRelief);
-        System.out.println("Spouse Relief                    "+spouseRelief);
-        System.out.println("Children Relief                  "+childrenRelief);
-        System.out.println("Other deductibles                "+deductibles);
-        System.out.println("Taxable Income                   "+(int)taxableIncome);
-        System.out.println("Total Tax                        "+totalTax);
-        System.out.println("Monthly Tax                      "+monthlyTax);
+        DecimalFormat df = new DecimalFormat("#,###.00");
+        System.out.println("\u001B[34m \n\n\nRESULT");
+        System.out.println("Monthly Salary                   "+df.format(monthlySalary));
+        System.out.println("Annual Salary                    "+df.format(annualSalary));
+        System.out.println("Income for "+months+" months             "+df.format(months*monthlySalary));
+        System.out.println("Personal Relief                  "+df.format(personalRelief));
+        System.out.println("Parent Relief                    "+df.format(parentRelief));
+        System.out.println("Spouse Relief                    "+df.format(spouseRelief));
+        System.out.println("Children Relief                  "+df.format(childrenRelief));
+        System.out.println("Other deductibles                "+df.format(deductibles));
+        System.out.println("Taxable Income                   "+df.format(taxableIncome));
+        System.out.println("Total Tax                        "+df.format(totalTax));
+        System.out.println("Monthly Tax                      "+df.format(monthlyTax));
 
     };
 
