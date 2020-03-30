@@ -107,16 +107,16 @@ public class main {
         if(taxableIncome<2000000){
             totalTax=taxableIncome;
         }
-        else if(taxableIncome>2000000 || taxableIncome< 5000000){
+        else if(taxableIncome>2000000 && taxableIncome< 5000000){
             totalTax=(taxableIncome-2000000)*5/100;
         }
-        else if(taxableIncome>5000000 || taxableIncome< 10000000){
+        else if(taxableIncome>5000000 && taxableIncome< 10000000){
             totalTax=150000+((taxableIncome-5000000)*10/100);
         }
-        else if(taxableIncome>10000000 || taxableIncome< 20000000){
+        else if(taxableIncome>10000000 && taxableIncome< 20000000){
             totalTax=150000+500000+((taxableIncome-1000000)*15/100);
         }
-        else if(taxableIncome>20000000 || taxableIncome< 30000000){
+        else if(taxableIncome>20000000 && taxableIncome< 30000000){
             totalTax=150000+500000+1500000+((taxableIncome-1000000)*20/100);
         }
         else{
