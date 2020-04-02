@@ -180,8 +180,5 @@ public class main {
 
 
     };
-    public void taxAmountOutput(double taxableIncome){
-
-    }
 
 };
